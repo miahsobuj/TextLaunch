@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TextLaunch</string>
+
+    <!-- Home Screen -->
+    <string name="home_apps">APPS</string>
+    <string name="home_widgets">WIDGETS</string>
+    <string name="home_settings">SETTINGS</string>
+    <string name="add_app">Add App</string>
+    <string name="remove_app">Remove</string>
+    <string name="edit_home">Edit Home</string>
+
+    <!-- App List -->
+    <string name="app_list_title">All Apps</string>
+    <string name="search_apps">Search apps…</string>
+    <string name="no_apps_found">No apps found</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_font">Font</string>
+    <string name="settings_text_color">Text Color</string>
+    <string name="settings_background">Background</string>
+    <string name="settings_grid_size">Grid Size</string>
+
+    <!-- Widgets -->
+    <string name="widget_add">Add Widget</string>
+    <string name="widget_remove">Remove Widget</string>
+
+    <!-- Actions -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
+
+    <!-- Fonts -->
+    <string name="font_monospace">Monospace</string>
+    <string name="font_sans_serif">Sans Serif</string>
+    <string name="font_serif">Serif</string>
+</resources>
