@@ -102,8 +102,8 @@ class HomeFragment : Fragment() {
             val row = index / currentSettings.gridColumns
             val col = index % currentSettings.gridColumns
 
-            val params = GridLayout.Spec.create(row, 1f)
-            val colSpec = GridLayout.Spec.create(col, 1f)
+            val params = GridLayout.spec(row, 1f)
+            val colSpec = GridLayout.spec(col, 1f)
         }
     }
 
@@ -116,10 +116,7 @@ class HomeFragment : Fragment() {
             gravity = android.view.Gravity.CENTER
             setPadding(8, 8, 8, 8)
 
-            layoutParams = GridLayout.LayoutParams().apply {
-                width = width
-                height = height
-            }
+            layoutParams = GridLayout.LayoutParams(width, height)
 
             setOnClickListener {
                 appRepository.launchApp(app)
