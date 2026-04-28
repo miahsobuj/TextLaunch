@@ -92,22 +92,17 @@ class HomeFragment : Fragment() {
     private fun renderApps() {
         gridLayout.removeAllViews()
 
-        val cellWidth = resources.displayMetrics.widthPixels / currentSettings.gridColumns
-        val cellHeight = resources.displayMetrics.heightPixels / currentSettings.gridRows
-
         homeApps.forEachIndexed { index, app ->
-            val appView = createAppView(app, cellWidth, cellHeight)
-            gridLayout.addView(appView)
-
             val row = index / currentSettings.gridColumns
             val col = index % currentSettings.gridColumns
-
-            val params = GridLayout.spec(row, 1f)
-            val colSpec = GridLayout.spec(col, 1f)
+            val appView = createAppView(app, row, col)
+            gridLayout.addView(appView)
         }
     }
 
-    private fun createAppView(app: AppInfo, width: Int, height: Int): View {
+    private fun createAppView(app: AppInfo, row: Int, col: Int): View {
+        val rowSpec = GridLayout.spec(row, 1f)
+        val colSpec = GridLayout.spec(col, 1f)
         return TextView(requireContext()).apply {
             text = app.appName
             setTextColor(currentSettings.textColor)
@@ -115,9 +110,7 @@ class HomeFragment : Fragment() {
             typeface = Typeface.create(currentSettings.fontFamily, Typeface.NORMAL)
             gravity = android.view.Gravity.CENTER
             setPadding(8, 8, 8, 8)
-
-            layoutParams = GridLayout.LayoutParams(width, height)
-
+            layoutParams = GridLayout.LayoutParams(rowSpec, colSpec)
             setOnClickListener {
                 appRepository.launchApp(app)
             }
